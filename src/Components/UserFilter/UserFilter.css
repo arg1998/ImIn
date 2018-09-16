@@ -1,0 +1,14 @@
+.searchField {
+  margin-right: 5;
+  width: 100%;
+  margin: 10px;
+}
+.filterType {
+  width: 35%;
+  max-width: 200px;
+  margin-right: 10px;
+}
+.filterButton {
+  width: 20%;
+  max-width: 100px;
+}
