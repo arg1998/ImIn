@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <Switch>
-        <Route path="/admin" component={AdminPanel} />
+        <Route path="/" component={AdminPanel} />
       </Switch>
       // <Playground />
     );
