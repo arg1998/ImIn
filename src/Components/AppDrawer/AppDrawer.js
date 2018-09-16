@@ -50,9 +50,12 @@ const styles = theme => ({
     height: "100%",
     padding: 10,
     [theme.breakpoints.up("md")]: {
-      marginLeft: drawerWidth
+      marginLeft: drawerWidth,
+      borderLeftColor: "#bbb",
+      borderLeftWidth: 2,
+      borderLeftStyle: "solid"
     },
-    marginTop: 40
+    paddingTop: 60
   }
 });
 
@@ -77,15 +80,12 @@ class AppDrawer extends React.Component {
             justifyContent: "center",
             alignItems: "center",
             fontSize: 22,
-            fontFamily: "sans-derif",
-            borderBottomWidth: 2,
-            borderBottomColor: "#ccc",
-            borderBottomStyle: "solid"
+            fontFamily: "sans-derif"
           }}
         >
           ImIn! Dashboard
         </div>
-        <DrawerItems />
+        <DrawerItems items={this.props.items} />
       </Wrapper>
     );
 
@@ -141,16 +141,7 @@ class AppDrawer extends React.Component {
               {drawer}
             </Drawer>
           </Hidden>
-          <main
-            className={classes.content}
-            style={{
-              borderColor: "#bbb",
-              borderLeftWidth: 2,
-              borderStyle: "solid"
-            }}
-          >
-            {this.props.children}
-          </main>
+          <main className={classes.content}>{this.props.children}</main>
         </div>
       </div>
     );
@@ -163,7 +154,7 @@ AppDrawer.propTypes = {
   theme: PropTypes.object.isRequired,
 
   //provided by dev
-  items: PropTypes.object.isRequired, // [ {title: string, icon: iconComponent} ]
+  items: PropTypes.arrayOf(PropTypes.object), // [ {title: string, icon: iconComponent} ]
   appTitle: PropTypes.string.isRequired
 };
 

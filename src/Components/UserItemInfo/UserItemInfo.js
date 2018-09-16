@@ -43,10 +43,10 @@ function UserInfoItme(props) {
             </Typography>
           </div>
           <div className={classes.iconContainer}>
-            <IconButton color="#000" component="span">
+            <IconButton component="span">
               <Edit />
             </IconButton>
-            <IconButton color="#000" component="span">
+            <IconButton component="span">
               <Delete />
             </IconButton>
           </div>

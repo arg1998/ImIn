@@ -20,8 +20,8 @@ export class UserFilter extends Component {
 
   render() {
     return (
-      <div>
-        <div>
+      <div style={{marginBottom: 20}}>
+        <div style={{marginBottom: 10}}>
           <TextField
             id="search"
             label="Search Value"

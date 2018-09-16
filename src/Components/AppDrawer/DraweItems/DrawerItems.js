@@ -2,18 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import MenuList from "@material-ui/core/MenuList";
 import MenuItem from "@material-ui/core/MenuItem";
-import Divider from "@material-ui/core/Divider";
-import Paper from "@material-ui/core/Paper";
 import { withStyles } from "@material-ui/core/styles";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import {
-  Person,
-  School,
-  Class,
-  Mood,
-  Notifications
-} from "@material-ui/icons/";
 
 const styles = theme => ({
   menuItem: {
@@ -29,66 +20,20 @@ const styles = theme => ({
 });
 
 function ListItemComposition(props) {
-  const { classes } = props;
+  const { classes, items } = props;
 
-  return (
-    <MenuList>
-      <MenuItem className={classes.menuItem}>
-        <ListItemIcon className={classes.icon}>
-          <Person />
-        </ListItemIcon>
-        <ListItemText
-          classes={{ primary: classes.primary }}
-          inset
-          primary="Users"
-        />
-      </MenuItem>
+  const _items = items.map((item, index) => (
+    <MenuItem key={index + item.title} className={classes.menuItem}>
+      <ListItemIcon className={classes.icon}>{item.icon}</ListItemIcon>
+      <ListItemText
+        classes={{ primary: classes.primary }}
+        inset
+        primary={item.title}
+      />
+    </MenuItem>
+  ));
 
-      <MenuItem className={classes.menuItem}>
-        <ListItemIcon className={classes.icon}>
-          <School />
-        </ListItemIcon>
-        <ListItemText
-          classes={{ primary: classes.primary }}
-          inset
-          primary="Instructors"
-        />
-      </MenuItem>
-
-      <MenuItem className={classes.menuItem}>
-        <ListItemIcon className={classes.icon}>
-          <Mood />
-        </ListItemIcon>
-        <ListItemText
-          classes={{ primary: classes.primary }}
-          inset
-          primary="Admins"
-        />
-      </MenuItem>
-
-      <MenuItem className={classes.menuItem}>
-        <ListItemIcon className={classes.icon}>
-          <Class />
-        </ListItemIcon>
-        <ListItemText
-          classes={{ primary: classes.primary }}
-          inset
-          primary="Courses"
-        />
-      </MenuItem>
-
-      <MenuItem className={classes.menuItem}>
-        <ListItemIcon className={classes.icon}>
-          <Notifications />
-        </ListItemIcon>
-        <ListItemText
-          classes={{ primary: classes.primary }}
-          inset
-          primary="Notifications"
-        />
-      </MenuItem>
-    </MenuList>
-  );
+  return <MenuList>{_items}</MenuList>;
 }
 
 ListItemComposition.propTypes = {
