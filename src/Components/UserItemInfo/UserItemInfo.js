@@ -6,14 +6,12 @@ import Typography from "@material-ui/core/Typography";
 
 const styles = theme => ({
   paper: {
-    padding: 10,
-    paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2,
     margin: 5,
     marginBottom: 10
   },
   iconContainer: {
     display: "flex",
+    justifyContent: "flex-start",
     flexDirection: "column",
     [theme.breakpoints.up("md")]: {
       flexDirection: "row"
@@ -34,7 +32,14 @@ function UserInfoItme(props) {
             justifyContent: "space-between"
           }}
         >
-          <div style={{ flexGrow: 1 }}>
+          <div
+            style={{
+              flexGrow: 1,
+              margin: 10,
+              marginBottom: 0,
+              paddingBottom: 5
+            }}
+          >
             <Typography variant="headline" component="h5">
               {props.fullName}
             </Typography>
@@ -46,7 +51,7 @@ function UserInfoItme(props) {
             <IconButton component="span">
               <Edit />
             </IconButton>
-            <IconButton component="span">
+            <IconButton color="secondary" component="span">
               <Delete />
             </IconButton>
           </div>

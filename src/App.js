@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Playground from "./Playground/Playground";
 import { Switch, Route } from "react-router";
-import { AdminPanel } from "./Panels/AdminLayout/AdminPanel";
+import AdminPanel from "./Panels/AdminPanel/AdminPanel";
 
 class App extends Component {
   render() {

@@ -48,14 +48,10 @@ const styles = theme => ({
     flexGrow: 1,
     width: "100%",
     height: "100%",
-    padding: 10,
     [theme.breakpoints.up("md")]: {
-      marginLeft: drawerWidth,
-      borderLeftColor: "#bbb",
-      borderLeftWidth: 2,
-      borderLeftStyle: "solid"
+      marginLeft: drawerWidth
     },
-    paddingTop: 60
+    paddingTop: 65
   }
 });
 
@@ -95,7 +91,10 @@ class AppDrawer extends React.Component {
           position: "absolute",
           width: "100%",
           height: "100%",
-          boxSizing: "border-box"
+          boxSizing: "border-box",
+          top:0,
+          left:0,
+
         }}
       >
         <div className={classes.root}>
