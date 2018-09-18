@@ -44,11 +44,8 @@ class AdminPanel extends Component {
   }
 }
 
-const mapStateToProps = newState => {
-  console.log(newState);
-  return {
-    currentScreen: newState.AP_userReducer.currentScreen
-  };
-};
+const mapStateToProps = newState => ({
+  currentScreen: newState.AP_userReducer.currentScreen
+});
 
 export default connect(mapStateToProps)(AdminPanel);

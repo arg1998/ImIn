@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import { UserFilter } from "../../../Components/UserFilter/UserFilter";
-import { Button } from "@material-ui/core";
-import { Add } from "@material-ui/icons";
-import classes from "./UserLayout.css";
 import UserItemInfo from "../../../Components/UserItemInfo/UserItemInfo";
 import { changeScreen } from "../../../store/actions";
 import { connect } from "react-redux";
 import screens from "../../Screens";
+import FAB from "../../../Components/FAB/FAB";
 
 const users = [
   { fullName: "Amir Reza Ghorbani", studentID: "811995162" },
@@ -45,17 +43,9 @@ export class UserLayout extends Component {
         {userList}
 
         {/* FAB button */}
-        <div className={classes.fab}>
-          <Button
-            onClick={() => this.props.changeScreen(screens.admin.TEST_SCREEN)}
-            variant="fab"
-            color="secondary"
-            aria-label="Add"
-            style={{ width: 70, height: 70 }}
-          >
-            <Add />
-          </Button>
-        </div>
+        <FAB
+          onClick={() => this.props.changeScreen(screens.admin.TEST_SCREEN)}
+        />
       </div>
     );
   }
